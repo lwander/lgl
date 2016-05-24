@@ -1,5 +1,4 @@
 use vertex::*;
-use directed::*;
 use graph::*;
 
 #[test]
