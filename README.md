@@ -13,7 +13,7 @@ writing in Rust later on.
 ## Usage
 
 
-```
+```rust
 let d1 = 1;
 let d2 = 2;
 
