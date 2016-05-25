@@ -4,7 +4,5 @@
 
 pub mod graph;
 
-mod vertex;
-
 #[cfg(test)]
 mod tests;
