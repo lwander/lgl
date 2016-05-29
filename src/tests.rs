@@ -38,6 +38,8 @@ fn edge_complete() {
         for vi in &d {
             if vo != vi {
                 assert!(g.is_edge(&vi, &vo));
+            } else {
+                assert!(!g.is_edge(&vi, &vo));
             }
         }
     }
