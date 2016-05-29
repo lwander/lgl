@@ -19,13 +19,13 @@ let d2 = 2;
 
 let mut g = DirectedGraph::new();
 
-let v1 = g.add_vertex(&d1);
-let v2 = g.add_vertex(&d2);
+g.add_vertex(&d1);
+g.add_vertex(&d2);
 
-g.add_edge(&v1, &v2);
+g.add_edge(&d1, &d2);
 
-assert!(g.is_edge(&v1, &v2));
-assert!(!g.is_edge(&v2, &v1));
+assert!(g.is_edge(&d1, &d2));
+assert!(!g.is_edge(&d2, &d1));
 ```
 
 ## Testing
