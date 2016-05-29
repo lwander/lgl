@@ -15,3 +15,30 @@ fn edge_basic() {
     assert!(g.is_edge(&d1, &d2));
     assert!(!g.is_edge(&d2, &d1));
 }
+
+#[test]
+fn edge_complete() {
+    let d = vec![1, 2, 3, 4, 5];
+
+    let mut g = DirectedGraph::new();
+
+    for v in &d {
+        g.add_vertex(v);
+    }
+
+    for vo in &d {
+        for vi in &d {
+            if vo != vi {
+                g.add_edge(&vi, &vo);
+            }
+        }
+    }
+
+    for vo in &d {
+        for vi in &d {
+            if vo != vi {
+                assert!(g.is_edge(&vi, &vo));
+            }
+        }
+    }
+}
