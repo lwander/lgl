@@ -78,4 +78,5 @@ impl<'a, T: 'a + Eq + Hash> DirectedGraph<'a, T> {
         let neighbors = self.graph.entry(vid).or_insert(HashSet::new());
         neighbors.contains(&uid)
     }
+
 }
