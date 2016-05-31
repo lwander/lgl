@@ -24,8 +24,11 @@ g.add_vertex(&d2);
 
 g.add_edge(&d1, &d2);
 
+let neighbors = g.neighbors(&d1);
+
 assert!(g.is_edge(&d1, &d2));
 assert!(!g.is_edge(&d2, &d1));
+assert!(neighbors.contains(&d2));
 ```
 
 ## Testing
