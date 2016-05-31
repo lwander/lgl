@@ -14,6 +14,10 @@ fn edge_basic() {
 
     assert!(g.is_edge(&d1, &d2));
     assert!(!g.is_edge(&d2, &d1));
+
+    let neighbors = g.neighbors(&d1);
+
+    assert!(neighbors.contains(&d2));
 }
 
 #[test]
@@ -35,10 +39,13 @@ fn edge_complete() {
     }
 
     for vo in &d {
+        let neighbors = g.neighbors(&vo);
         for vi in &d {
             if vo != vi {
+                assert!(neighbors.contains(&vi));
                 assert!(g.is_edge(&vi, &vo));
             } else {
+                assert!(!neighbors.contains(&vi));
                 assert!(!g.is_edge(&vi, &vo));
             }
         }
